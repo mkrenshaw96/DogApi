@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <link rel="icon" type="image/x-icon" href="./assets/favicon_io/favicon.ico">
     <link href="https://fonts.googleapis.com/css?family=Assistant&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./main.css">
     <meta charset="UTF-8">
@@ -16,12 +17,20 @@
             <div id='logo' class='nav-item'>Doggo API</div>
             <div class='query'>
                 <form action="" name='form1' class='form'>
-                    <input type="text" class='search nav-item' placeholder="Search breeds">
+                    <input type="text" class='search nav-item' placeholder="Search doggos">
                     <input type="submit" class='submit nav-item' name='search-input'>
                 </form>
             </div>
         </nav>
         <br>
+        <div id='prev-next-wrap'>
+            <div><button id='prev-button' class='left-right'><img id='arr-a' src="./assets/arrow-point-to-right.svg"
+                        alt=""></button>
+            </div>
+            <div><button id='next-button' class='left-right'><img id='arr-b' src="./assets/arrow-point-to-right.svg"
+                        alt=""></button>
+            </div>
+        </div>
         <div class='wrapper'>
             <div class='background'>
                 <div class='image'><img src="" class='doggo-img' alt=""></div>
@@ -31,10 +40,6 @@
                 <div id='info-wrapper'>
                     <div class='col-wrapper'>
                         <div class='col'>
-                            <!-- <div class='data-box'>
-                                <div class='dog-name'>Name:&nbsp</div>
-                                <div id='dog-name'></div>
-                            </div> -->
                             <div class='data-box'>
                                 <div class='dog-group'>Group:&nbsp</div>
                                 <div id='dog-group'></div>
@@ -71,12 +76,6 @@
             </div>
         </div>
     </div>
-    <nav id='nav'>
-        <button id='next'>Next</button>
-        <button id='previous'>Previous</button>
-    </nav>
-
-
 
     <script src='./main.js'></script>
 </body>
