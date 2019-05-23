@@ -24,7 +24,9 @@ searchForm.addEventListener('submit', fetchResults);
 let place = 0;
 let wrapper = document.querySelector('div.wrapper');
 let nextPrev = document.getElementById('prev-next-wrap');
+let testButton = document.getElementById('testButton');
 nextPrev.style.display = 'none';
+
 
 function fetchResults(e) {
     e.preventDefault();
@@ -71,10 +73,10 @@ function displayResults(json) {
                 fetchImage(breedId);
             } else {
                 nextButton = document.getElementById('next-button').addEventListener('click', e => {
+                    // let nextButton = document.getElementById('next-button').style.display = 'none';
                     e.preventDefault();
                 })
             }
-
             return place;
         })
         let prevButton = document.getElementById('prev-button').addEventListener('click', e => {
@@ -107,8 +109,12 @@ function displayResults(json) {
         doggoGroup.textContent = json[0].breed_group;
         doggoTemp.textContent = json[0].temperament;
     }
+
     fetchImage(breedId);
 }
+testButton.addEventListener('click', e => {
+    fetchImage(breedId);
+})
 
 function fetchImage(x) {
     newUrl = `${imageURL}?breed_ids=${x}`;
@@ -118,8 +124,12 @@ function fetchImage(x) {
         })
         .then(function (json) {
             for (vals of json) {
+                console.log(vals.url)
                 dogImage = vals.url;
                 displayImage.src = dogImage;
+                if (vals.url === NaN) {
+                    console.log('THIS BROKE')
+                }
             }
         })
 }
